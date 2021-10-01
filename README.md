@@ -18,3 +18,9 @@ This repository is the starter code for the project: Students will fork and clon
 
  ## Getting Started
  - the tweets have to between 1 and 140 characters.
+
+## ScreenShot Section 
+!["Screenshot of tweet"] (https://github.com/fateme3611/Tweeter/blob/master/doc/Presentation3.png?raw=true)
+!["Screenshot of error"] (https://github.com/fateme3611/Tweeter/blob/master/doc/Presentation1_01.png?raw=true)
+!["Screenshot of tweet when the width of page changing"] (https://github.com/fateme3611/Tweeter/blob/master/doc/Presentation1_01.png?raw=true)
+
