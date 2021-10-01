@@ -1,0 +1,41 @@
+.tweet-container {
+    align-self: center;
+    background-color: #f4f1ec;
+    border: solid 4px gray;
+    padding: 20px;
+    margin: 15px 0;
+}
+
+.tweet-header{
+    display: flex;
+    justify-content: space-between;
+}
+.tweet-user{
+    display: flex;
+    align-items: center;
+}
+.tweet-user-image{
+    font-size: 36px;
+    margin-right: 15px;
+}
+.tweet-body{
+    padding: 30px 0;
+}
+.tweet-footer{
+    padding-top: 20px;
+    border-top: solid 4px gray;
+    display: flex;
+    justify-content: space-between;
+}
+.tweet-icon-group{
+    color: blue ;
+    font-size: 14px;
+} 
+
+.tweet-icon-group i{
+    padding: 2px;
+    cursor: pointer;
+}
+.tweet-icon-group i:hover{
+    color: rgb(204, 181, 52);
+}

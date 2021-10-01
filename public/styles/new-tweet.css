@@ -1,0 +1,40 @@
+.new-tweet .new-tweet-error {
+    border: red 5px solid;
+    color: red;
+    padding: 10px;
+    display: none;
+}
+
+.new-tweet form {
+    align-items: center;
+    width: 100%;
+}
+
+
+.new-tweet form label{
+    /* display: block; */
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+
+.new-tweet form textarea{
+    border: none;
+    width: 100%;
+}
+
+.new-tweet form div{
+    font-family: "Bungee" , "sans-serif";
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    border-top: 3px gray solid;
+}
+
+.new-tweet form div button{
+background-color: navy;
+color: white;
+padding: 5px;
+
+}
+

@@ -15,11 +15,48 @@ html {
  */
 
 body {
+  padding-top: 100px;
+
   color: #545149;
   background-color: #f4f1ec;
+  font-family: "Source Sans Pro", "sans-serif" ;
   font-size: 24px;
 }
 
+.content {
+  display: flex;
+  padding-top:40px;
+}
+
+header.mainHeader{
+  flex: 1;
+  padding: 0 100px;
+}
+
+main {
+  flex: 1;
+  margin: auto;
+  background-color: #f4f1ec;
+  padding: 0 40px;
+}
+
+@media (max-width:800px){
+  .content{
+    flex-direction: column;
+    padding-top:0;
+  }
+
+  header.mainHeader{
+    padding: 0;
+  }
+  nav{
+    background-image: url("https://www.transparenttextures.com/patterns/cardboard.png");            
+    background-color: #8b74bd !important;
+  }
+  .new-tweet form textarea{
+    margin-top: 50px;
+}
+}
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */

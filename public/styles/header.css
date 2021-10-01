@@ -1,0 +1,34 @@
+header.mainHeader {
+  justify-content: center;
+  display: flex;
+  height: 320px;
+ 
+}
+
+header.mainHeader > div  {
+    display: flex;
+    justify-content: center;
+    background-image: url("https://www.transparenttextures.com/patterns/cardboard.png");            
+    background-color: #8b74bd;
+    width: 100%;
+    text-align: center;
+}
+
+header.mainHeader > div > div {
+    flex: 1 ;
+    max-width: 280px;
+    height: 320px;
+    display: flex;
+   flex-direction: column;
+    text-align: center;
+
+  
+   }
+
+header.mainHeader div h2{
+    text-align: center;
+    padding: 10px;
+    margin: 0;
+    color: white;
+}
+

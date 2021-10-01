@@ -1,29 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Meta Information -->
-    <title>Tweeter - Home Page</title>
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
+<head>
+  <!-- Meta Information -->
+  <title>Tweeter - Home Page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;1,600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+    integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <!-- External CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    type="text/css" />
 
-    <!-- External JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- App CSS -->
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
 
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/client.js"></script>
-  </head>
 
-  <body>
-    <!-- Top nav bar (fixed) -->
-    <nav>
-      <span>tweeter</span>
-    </nav>
+  <!-- External JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
+    integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- App JS -->
+  <script type="text/javascript" src="/scripts/client.js"></script>
+</head>
 
+<body>
+  <!-- Top nav bar (fixed) -->
+  <nav>
+    <span class="tweeterLogo">tweeter</span>
+    <span class="navRightSide">
+      <div class="newTweet">Write a new tweet</div>
+      <div class="fas fa-angle-double-down"></div>
+
+    </span>
+  </nav>
+  <div class="content">
+    <header class="mainHeader">
+      <div>
+        <div>
+          <img src="/images/profile-hex.png">
+          <h2>Your Name</h2>
+        </div>
+      </div>
+    </header>
     <!-- Page-specific (main) content here -->
-    <main class="container"></main>
-  </body>
+    <main class="container">
+      <section class="new-tweet">
+        <h5 class="new-tweet-error"> Khar </h5>
+        <form onsubmit="tweetSubmitHandlet(event)">
+          <textarea placeholder="What are you humming about?" name="text" id="tweet-text"></textarea>
+          <div>
+            <button type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+        <div id="tweets-container">
+
+          Loading ....
+        </div>
+
+        <!-- <article class="tweet-container">
+         <header class="tweet-header">
+          <span class="tweet-user">
+            <i class="tweet-user-image fas fa-user-tie"></i>
+            <span class="tweet-user-name">name</span>
+          </span>
+          <span class="tweet-user-handle">@</span>
+
+        </header>
+        <div class="tweet-body">tweet</div>
+        <footer class="tweet-footer">
+          <span>10 days ago</span>
+          <span class="tweet-icon-group">
+            <i class="fas fa-flag"></i>
+            <i class="fas fa-retweet"></i>
+            <i class="fas fa-heart"></i>
+          </span>
+        </footer>
+      </article> -->
+      </section>
+    </main>
+  </div>
+</body>
+
 </html>
