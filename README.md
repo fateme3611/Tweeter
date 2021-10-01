@@ -16,8 +16,11 @@ This repository is the starter code for the project: Students will fork and clon
 - Express
 - Node 5.10.x or above
 
- ## Getting Started
+## Getting Started
  - the tweets have to between 1 and 140 characters.
+ - you can change the width of your page and after changing the tweets move under the header.
+ - the number of characters in tweet shows during the writing under the form of tweet
+ - the time of tweets shows at the bottom of twwet header
 
 ## Screenshots 
 !["Screenshot of tweet"](https://github.com/fateme3611/Tweeter/blob/master/doc/Presentation3.png?raw=true)
