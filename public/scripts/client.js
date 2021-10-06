@@ -4,21 +4,26 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+const MAX_TWEET_LENGTH = 140;
+
 function tweetSubmitHandlet(e) {
   e.preventDefault();
-  let errorMessage ='';
-  const data = $(e.target).serialize();
-  if (data && data.length > 5 && data.length <= 145) {
+  let errorMessage = '';
+  const tweetLength = e.target['text'].value.length;
+
+  if (tweetLength > 0 && tweetLength <= MAX_TWEET_LENGTH) {
+    const data = $(e.target).serialize();
     $.ajax({
       url: '/tweets',
       method: 'POST',
       data: data,
-      success:(successData)=>{
+      success: (successData) => {
         e.target.reset();
+        setCounterValue(MAX_TWEET_LENGTH);
         addNewTweetToContainer(successData.tweet);
       }
     });
-  } else if (data.length > 145){
+  } else if (tweetLength > MAX_TWEET_LENGTH) {
     errorMessage = 'Tweet content is too long';
   }
   else {
@@ -28,8 +33,8 @@ function tweetSubmitHandlet(e) {
   showNewTweetErrorMessage(errorMessage);
 }
 
-function showNewTweetErrorMessage(message){
-  if(message.length){
+function showNewTweetErrorMessage(message) {
+  if (message.length) {
     $('.new-tweet-error').text(message).slideDown();
   } else {
     $('.new-tweet-error').slideUp();
@@ -44,34 +49,12 @@ function renderTweets(tweets) {
   }
 }
 
-function addNewTweetToContainer(tweetData){
+function addNewTweetToContainer(tweetData) {
   const $container = $('#tweets-container');
   let $tweetElm = createTweetElement(tweetData);
   $container.prepend($tweetElm);
 }
-function createTweetElement2(tweetData) {
-  const markup = `<article class="tweet-container">
-    <header class="tweet-header">
-     <span class="tweet-user">
-       <img src="${tweetData.user.avatars}" class="tweet-user-image"></img>
-       <span class="tweet-user-name">${tweetData.user.name}</span>
-     </span>
-     <span class="tweet-user-handle">${tweetData.user.handle}</span>
 
-   </header>
-   <div class="tweet-body">${tweetData.content.text}</div>
-   <footer class="tweet-footer">
-     <span>${timeago.format(tweetData.created_at)}</span>
-     <span class="tweet-icon-group">
-       <i class="fas fa-flag"></i>
-       <i class="fas fa-retweet"></i>
-       <i class="fas fa-heart"></i>
-     </span>
-   </footer>
- </article>`;
-
-  return $(markup);
-}
 function createTweetElement(tweetData) {
   const $tweet = $('<article>', {
     class: "tweet-container"
@@ -115,7 +98,6 @@ function createTweetElement(tweetData) {
   $tweet.append($tweetFooter);
 
   return $tweet;
-
 }
 
 function loadTweets() {
@@ -126,18 +108,7 @@ function loadTweets() {
 }
 
 
-
 $(() => {
-  
   loadTweets();
-  const $counter = $('.new-tweet .counter').text(140);
-  $('#tweet-text').on("input", (e)=>{
-    const len = 140 - e.target.value.length;
-    let color = ''; 
-    if(len<0){
-      color = 'red';
-    }
-    $counter.text(len).css({color:color});
-  });
 });
 

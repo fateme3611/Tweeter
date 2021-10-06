@@ -30,6 +30,7 @@
     integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <!-- App JS -->
+  <script src="/scripts/charCounterHelper.js"></script>
   <script type="text/javascript" src="/scripts/client.js"></script>
 </head>
 
@@ -57,7 +58,8 @@
       <section class="new-tweet">
         <h5 class="new-tweet-error"> Khar </h5>
         <form onsubmit="tweetSubmitHandlet(event)">
-          <textarea placeholder="What are you humming about?" name="text" id="tweet-text"></textarea>
+          <textarea oninput="updateCharecterCounter(event)" placeholder="What are you humming about?" name="text"
+            id="tweet-text"></textarea>
           <div>
             <button type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>

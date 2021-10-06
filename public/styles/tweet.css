@@ -6,6 +6,10 @@
     margin: 15px 0;
 }
 
+.tweet-container:hover {
+    box-shadow: 5px 5px 5px gray;
+}
+
 .tweet-header{
     display: flex;
     justify-content: space-between;
